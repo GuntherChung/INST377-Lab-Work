@@ -42,7 +42,7 @@ a {
   text-decoration: none;
 }
 
-h2 {
+h2, h3 {
   margin:0;
   padding:0;
   padding-bottom:1.5rem;
@@ -100,6 +100,7 @@ form {
 
   /* shapes */
   border-radius: 6px;
+  border: 2px dashed;
   font-size: 1.5rem;
   padding: 1.25rem;
   margin:0; /* removing the margin on h1 tags means the header pins to the top if we move */
@@ -142,7 +143,9 @@ form {
   flex: 1 2 auto;
   margin: 1rem;
   align-items: center;
-  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+ 
 }
 
 /*
@@ -302,7 +305,14 @@ form input {
 @media only screen and (max-width: 736px){
     /* Rules in here will only apply when a screen is the correct size */
     /* check it out by using your developer tools to shrink your screen-size */
+
     .container {
-      background-color: rgba(204, 8, 162, 0.65);
+      background-color: rgb(0, 77, 159);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;}
+
+    .right_section{
+      align-items: flex-start;
     }
 }
