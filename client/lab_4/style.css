@@ -138,9 +138,8 @@ form {
   flex: 0 1 auto;
   margin: 1rem;
   padding: 1.5rem;
-  display: flex;
   flex-direction: column;
-  
+  display: flex;
 }
 
 .right_section {
@@ -148,8 +147,8 @@ form {
   flex: 1 2 auto;
   margin: 1rem;
   align-items: center;
-  display: flex;
   flex-direction: column;
+  display: flex;
   
 }
 
@@ -314,22 +313,12 @@ form input {
     .container {
       background-color: rgba(121, 72, 12, 0.749);
       flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      display:block;
-      
-      
-      
-      }
+      justify-content:start;
+      align-items: start;
+      display: block;
+    }
     
     .box{
       align-items: flex-start;
     }
-
-    .header{
-      padding-bottom: 0;
-    }
-
-    
-    
 }
