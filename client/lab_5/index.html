@@ -3,3 +3,51 @@
 <!-- If you open /routes/apiRoutes and go to line 38 you will find the server side answer to your request! -->
 
 <!-- Temporarily unhook your script.js file from your main index file -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daniel H Gonzalez's Labs For INST377</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="Wrapper">
+      <header class="header">
+        <h1>Daniel H Gonzalez's Labs For INST377</h1>
+      </header>
+      <div class="container">
+        <div class="left_section box">
+          <h3>Forum inputs</h3>
+          <form action="/api" class="box">
+            <label for="resto"></label>
+            <input type="text" name="resto" id="resto" />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+
+        <div class="right_section box">
+          <h3>Local Reasturants</h3>
+          <div class="restaurant_list box">
+              Some local reasturants near me are:
+              <li>Burger King</li>
+              <li>Denny's</li>
+              <li>Five Guys</li>
+              <li>Popeyes</li>
+              <li>Taco Bell</li>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        My GitHub Account:
+        <a
+          href="http://github.com/GuntherChung/INST377-Lab-Work"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GuntherChung
+        </a>
+      </footer>
+    </div>
+  </body>
+</html>
