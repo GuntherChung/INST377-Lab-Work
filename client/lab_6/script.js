@@ -1,11 +1,6 @@
 /* eslint-disable max-len */
 
 /*
-  Hook this script to index.html
-  by adding `<script src="script.js">` just before your closing `</body>` tag
-*/
-
-/*
   ## Utility Functions
     Under this comment place any utility functions you need - like an inclusive random number selector
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
@@ -18,15 +13,17 @@ function getRandomIntInclusive(min, max) {
 
 function injectHTML(list) {
   console.log('fired injectHTML');
-  /*
-  ## JS and HTML Injection
-    There are a bunch of methods to inject text or HTML into a document using JS
-    Mainly, they're considered "unsafe" because they can spoof a page pretty easily
-    But they're useful for starting to understand how websites work
-    the usual ones are element.innerText and element.innerHTML
-    Here's an article on the differences if you want to know more:
-    https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent#differences_from_innertext
+  const target = document.querySelector('#restaurant_list');
+  target.innerHTML = '';
 
+  const listEl = document.createElement('ol');
+  target.appendChild(listEl);
+  list.forEach((item) => {
+    const el = document.createElement('li');
+    el.innerText = item.name;
+    listEl.appendChild(el);
+  });
+  /*
   ## What to do in this function
     - Accept a list of restaurant objects
     - using a .forEach method, inject a list element into your index.html for every element in the list
@@ -37,7 +34,7 @@ function injectHTML(list) {
 function processRestaurants(list) {
   console.log('fired restaurants list');
   const range = [...Array(15).keys()];
-  const newArray = range.map((item) => {
+  const newArray = range.map((item) => { 
     const index = getRandomIntInclusive(0, list.length);
     return list[index];
   });
