@@ -59,6 +59,15 @@ function processRestaurants(list) {
   */
 }
 
+function filterList(list, filterInputValue) {
+  return list.filter((item) => {
+    if (!item.name) { return; }
+    const lowerCaseName = item.name.toLowerCase();
+    const lowerCaseQuery = filterInputValue.toLowerCase();
+    return lowerCaseName.includes(lowerCaseQuery);
+  });
+}
+
 async function mainEvent() {
   /*
     ## Main Event
@@ -98,18 +107,18 @@ async function mainEvent() {
 
   // This IF statement ensures we can't do anything if we don't have information yet
   if (!arrayFromJson.data?.length) { return; } // the question mark in this means "if this is set at all"
-
-  let currentList = [];
-
   submit.style.display = 'block'; // let's turn the submit button back on by setting it to display as a block when we have data available
 
   // turns off the load button
   loadAnimation.classList.remove('lds-ellipsis');
   loadAnimation.classList.add('lds-ellipsis_hidden');
 
+  let currentList = [];
+
   form.addEventListener('input', (event) => {
-    console.log('input', event.target.value);
-    injectHTML(currentList);
+    console.log(event.target.value);
+    const newArray = filterList(currentList, event.target.value);
+    injectHTML(newArray);
   });
 
   // And here's an eventListener! It's listening for a "submit" button specifically being clicked
