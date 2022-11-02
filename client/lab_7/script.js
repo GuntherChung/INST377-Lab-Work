@@ -26,7 +26,7 @@ function injectHTML(list) {
   /*
   ## What to do in this function
     - Accept a list of restaurant objects
-    - using a .forEach method, inject a list element into your index.html for every element in the list
+    - using a .forEach method, inject list element into your index.html for every element in the list
     - Display the name of that restaurant and what category of food it is
 */
 }
