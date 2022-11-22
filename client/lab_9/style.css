@@ -399,3 +399,8 @@ html {
         transform: translate(24px, 0);
       }
     }
+
+    .chart_container {
+      height: 100%;
+      width: 100%;
+    }
